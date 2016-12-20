@@ -11,5 +11,6 @@ MSCKF (Multi-State Constraint Kalman Filter) is a well known Visual Inertial Nav
 
 ## Change Log
 ### v0.1 (2016/12/20)
+* Create this repo.
 * Create the basic framework.
 
