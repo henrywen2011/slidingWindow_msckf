@@ -20,6 +20,7 @@ ZED + Xsens
 * Create the basic framework.
 
 ### v0.2 (2016/12/21)
-* Setup frame and feature class.
+* Create frame and feature classes.
+* Create imu and some utils classes.
 * Update CMakeLists.txt
 
