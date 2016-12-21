@@ -6,11 +6,45 @@
 
 #include "exceptions/general_exception.h"
 
+Frame::Frame() : is_valid_(false) {
+}
+
 Frame::Frame(cv::Mat& image, cv::Ptr<cv::ORB> detector) {
     assert(image.channels() == 3 || image.channels() == 1);
     cv::Mat gray = toGray(image);
 
     detectKeypointsAndDescripts(detector, gray);
+}
+
+Frame::Frame(double time, const cv::Mat& image) : is_valid_(true) {
+    time_ = time;
+    image_ = toGray(image);
+    was_processed_ = false;
+}
+
+Frame::operator bool() const {
+    return is_valid_;
+}
+
+void Frame::setIsProcessed() {
+    assert(was_processed_ == false);
+    was_processed_ = true;
+}
+
+bool Frame::wasProcessed() const {
+    return was_processed_;
+}
+
+double Frame::getTime() const {
+    return time_;
+}
+
+cv::Mat& Frame::getImage() {
+    return image_;
+}
+
+const cv::Mat& Frame::cgetImage() const {
+    return image_;
 }
 
 void Frame::detectKeypointsAndDescripts(cv::Ptr< cv::ORB > detector, cv::Mat gray)
