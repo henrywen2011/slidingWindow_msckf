@@ -70,8 +70,8 @@ src/frame/frame.cpp
 #src/utils/stats_timer.cpp
 #include/utils/chi_squared_ppm.h
 #algorithm
-#include/algorithm/camera_algorithms.h
-#src/algorithm/camera_algorithms.cpp
+include/algorithm/residual.h
+src/algorithm/residual.cpp
 #others
 include/msckf.h
 src/msckf.cpp

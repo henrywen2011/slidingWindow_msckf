@@ -60,7 +60,7 @@ feature_track_list Tracker::processImage(feature_track_list& previous_tracks, cv
                 previous_tracks[train_idx]->revertLastPosition();
                 
                 std::size_t previous_matched_idx = matched_feature_assigned[train_idx];
-                current_tracks[previous_matched_idx].reset(new FeatureTrack);
+                current_tracks[previous_matched_idx].reset(new Feature);
                 
                 current_feature_matched[previous_matched_idx] = false;
             }
@@ -102,9 +102,9 @@ void Tracker::createNewFeatureTracks(std::vector<bool> &feature_matched,
         if (!feature_matched[i]) {
             // This is new feature
             const cv::KeyPoint& current_keypoint = frame.keypoints()[i];
-            std::shared_ptr<FeatureTrack> feature_track(new FeatureTrack);
-            feature_track->addFeaturePosition(current_keypoint.pt.x/scale_factor, current_keypoint.pt.y/scale_factor);
-            feature_tracks[i] = feature_track;
+            std::shared_ptr<Feature> feature(new Feature);
+            feature->addFeaturePosition(current_keypoint.pt.x/scale_factor, current_keypoint.pt.y/scale_factor);
+            feature_tracks[i] = feature;
         }
     }
 }
