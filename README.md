@@ -10,6 +10,10 @@ MSCKF (Multi-State Constraint Kalman Filter) is a well known Visual Inertial Nav
 * **A Multi-State Constraint Kalman Filter for Vision-aided Inertial Navigation**, *Anastasios I. Mourikis and Stergios I. Roumeliotis*, ICRA '07
 * **Indirect Kalman Filter for 3D Attitude Estimation A Tutorial for Quaternion Algebra**, *Nikolas Trawny and Stergios I. Roumeliotis*, Department of Computer Science & Engineering University of Minnesota
 
+### Sensor
+ZED + Xsens
+![image](https://github.com/doomzzju/slidingWindow_msckf/blob/master/sensor.jpg)
+
 ## Change Log
 ### v0.1 (2016/12/20)
 * Create this repo.
